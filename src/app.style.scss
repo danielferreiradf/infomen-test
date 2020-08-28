@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Trebuchet MS";
+  src: url("./assets/fonts/TrebuchetMS.ttf");
+
+  font-family: "Trebuchet MS Bold";
+  src: url("./assets/fonts/TrebuchetMS-Bold.ttf");
+
+  font-family: "Museo";
+  src: url("./assets/fonts/Museo-700.ttf");
+}
+
+// @include font("Trebuchet MS", "./assets/fonts/TrebuchetMS.ttf");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", Courier, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+  font-size: 62.5%;
+}
+
+body {
+  background: #f2f2f2;
+}
