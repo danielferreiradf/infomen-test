@@ -50,14 +50,22 @@
       line-height: 43px;
       color: #5c5c5c;
       margin-bottom: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
     }
 
     p {
       font-style: normal;
-      font-weight: normal;
       font-size: 16px;
       line-height: 24px;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
+
     .options {
       display: flex;
       justify-content: center;
@@ -124,9 +132,20 @@
   }
 }
 
+.warning {
+  font-size: 16px;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0;
+}
+
 .section-buttons {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .button1 {
     border: 2px solid #5c5c5c;
@@ -138,6 +157,8 @@
     background: none;
     cursor: pointer;
     transition: 0.3s all;
+    margin: 5px;
+    font-weight: bold;
 
     &:hover {
       background: #5c5c5c;
@@ -155,6 +176,8 @@
     background: none;
     cursor: pointer;
     transition: 0.3s all;
+    margin: 5px;
+    font-weight: bold;
 
     &:hover {
       background: #4ba21c;

@@ -10,6 +10,7 @@ import LaptopGirl from "./assets/images/Laptop Girl.svg";
 import Image1 from "./assets/images/image 1.png";
 import Image2 from "./assets/images/image 2.png";
 import Image3 from "./assets/images/image 3.svg";
+import Image4 from "./assets/images/image 4.png";
 
 import "./app.style.scss";
 
@@ -59,6 +60,15 @@ const App = () => {
     }
   }
 
+  function handleNextPage(pageNumber) {
+    setSelectedOptions({
+      option1selected: false,
+      option2selected: false,
+      option3selected: false,
+    });
+    setQuestionPage(pageNumber);
+  }
+
   function calculateResult() {
     setResult(
       question1 +
@@ -71,16 +81,6 @@ const App = () => {
     );
     setQuestionPage(9);
   }
-
-  console.log(
-    question1,
-    question2,
-    question3,
-    question4,
-    question5,
-    question6,
-    question7
-  );
 
   return (
     <div className="App">
@@ -106,7 +106,7 @@ const App = () => {
           <div className="section-buttons">
             <button className="button1">I'd like to opt out</button>
 
-            <button className="button2" onClick={() => setQuestionPage(1)}>
+            <button className="button2" onClick={() => handleNextPage(1)}>
               Let's get started
             </button>
           </div>
@@ -168,7 +168,7 @@ const App = () => {
               back
             </button>
             {question1 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(2)}>
+              <button className="button2" onClick={() => handleNextPage(2)}>
                 next
               </button>
             )}
@@ -231,7 +231,7 @@ const App = () => {
               back
             </button>
             {question2 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(3)}>
+              <button className="button2" onClick={() => handleNextPage(3)}>
                 next
               </button>
             )}
@@ -283,7 +283,7 @@ const App = () => {
               back
             </button>
             {question3 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(4)}>
+              <button className="button2" onClick={() => handleNextPage(4)}>
                 next
               </button>
             )}
@@ -349,7 +349,7 @@ const App = () => {
               back
             </button>
             {question4 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(5)}>
+              <button className="button2" onClick={() => handleNextPage(5)}>
                 next
               </button>
             )}
@@ -415,7 +415,7 @@ const App = () => {
               back
             </button>
             {question5 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(6)}>
+              <button className="button2" onClick={() => handleNextPage(6)}>
                 next
               </button>
             )}
@@ -478,7 +478,7 @@ const App = () => {
               back
             </button>
             {question6 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(7)}>
+              <button className="button2" onClick={() => handleNextPage(7)}>
                 next
               </button>
             )}
@@ -531,7 +531,7 @@ const App = () => {
               back
             </button>
             {question7 !== null && (
-              <button className="button2" onClick={() => setQuestionPage(8)}>
+              <button className="button2" onClick={() => handleNextPage(8)}>
                 next
               </button>
             )}
@@ -564,6 +564,16 @@ const App = () => {
               <img src={Image1} alt="" />
             </div>
           </section>
+
+          <h1 className="warning">
+            Are you interested in hearing from us in the future?{" "}
+          </h1>
+          <div className="section-buttons">
+            <button className="button1">no, thanks</button>
+            <button className="button2" onClick={() => setQuestionPage(10)}>
+              yes, please
+            </button>
+          </div>
         </Question>
       )}
 
@@ -582,6 +592,16 @@ const App = () => {
               <img src={Image3} alt="" />
             </div>
           </section>
+
+          <h1 className="warning">
+            Are you interested in hearing from us in the future?{" "}
+          </h1>
+          <div className="section-buttons">
+            <button className="button1">no, thanks</button>
+            <button className="button2" onClick={() => setQuestionPage(10)}>
+              yes, please
+            </button>
+          </div>
         </Question>
       )}
 
@@ -593,6 +613,8 @@ const App = () => {
               <p>
                 Based on your answers, below are a few tips that we think might
                 be helpful to you.
+                <br />
+                <br />
                 <br />
               </p>
               <p>
@@ -607,6 +629,38 @@ const App = () => {
 
             <div className="right-section">
               <img src={Image2} alt="" />
+            </div>
+          </section>
+
+          <h1 className="warning">
+            Are you interested in hearing from us in the future?{" "}
+          </h1>
+          <div className="section-buttons">
+            <button className="button1">no, thanks</button>
+            <button className="button2" onClick={() => setQuestionPage(10)}>
+              yes, please
+            </button>
+          </div>
+        </Question>
+      )}
+
+      {/* 10 - See you */}
+      {questionPage === 10 && (
+        <Question>
+          <section className="questionary">
+            <div className="left-section">
+              <h1>See you !</h1>
+              <p>
+                Thank you for your time. We hope to hear from you in the future.
+                <br />
+                <br />
+                Take care!
+              </p>
+            </div>
+
+            <div className="right-section">
+              <img src={Image4} alt="" />
+              <img src="" alt="" />
             </div>
           </section>
         </Question>
