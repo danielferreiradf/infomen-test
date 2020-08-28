@@ -1,0 +1,3 @@
+- 1. clone or download this project from github.
+- 2. run `npm install` to install the necessary depencies.
+- 3. run `npm start` to iniciate the project in development mode.
